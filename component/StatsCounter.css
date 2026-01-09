@@ -1,0 +1,173 @@
+
+.stats-counter-section {
+  width: 100%;
+  padding: 80px 5%;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  font-family: 'Inter', sans-serif;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stats-header {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.stats-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0F5C3A;
+  margin: 0 0 15px 0;
+  position: relative;
+  display: inline-block;
+}
+
+
+
+.stats-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Counter Grid */
+.counter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+/* Counter Card */
+.counter-card {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.counter-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.counter-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.counter-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.counter-card:nth-child(4) {
+  animation-delay: 0.5s;
+}
+
+.counter-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(15, 92, 58, 0.15);
+  border-top: 3px solid #0F5C3A;
+}
+
+/* Counter Number */
+.counter-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #0F5C3A;
+  margin-bottom: 15px;
+  line-height: 1;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Counter Label */
+.counter-label {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Animation */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stats-counter-section {
+    padding: 60px 5%;
+  }
+
+  .stats-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .stats-header p {
+    font-size: 1rem;
+  }
+
+  .counter-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .counter-number {
+    font-size: 2.5rem;
+  }
+
+  .counter-label {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-counter-section {
+    padding: 40px 5%;
+  }
+
+  .stats-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .stats-header h2::before {
+    left: -25px;
+  }
+
+  .counter-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .counter-card {
+    padding: 20px;
+  }
+
+  .counter-number {
+    font-size: 2rem;
+  }
+
+  .counter-label {
+    font-size: 0.85rem;
+  }
+}

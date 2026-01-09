@@ -1,0 +1,139 @@
+.faq-section {
+  padding: 80px 20px;
+  background-color: #ffffff;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0F5C3A;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.faq-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 50px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+  position: relative;
+  z-index: 1;
+}
+
+.faq-item:hover .faq-question {
+  background: #f8fafc;
+}
+
+.faq-item.active .faq-question {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+  z-index: 10;
+  background: #ffffff;
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #334155;
+  transition: color 0.3s ease;
+}
+
+.faq-item.active .faq-question h3 {
+  color: #1e293b;
+}
+
+.faq-icon {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1e293b;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  background-color: #0F5C3A;
+  color: white;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, opacity 0.3s ease;
+  opacity: 0;
+  background: transparent;
+  /* Transparent background as requested */
+  padding: 0 24px;
+  /* Align text with card content */
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  /* Adjust based on content */
+  opacity: 1;
+  padding-top: 15px;
+  /* Add space between card and text */
+}
+
+.faq-answer p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 2rem;
+  }
+
+  .faq-question {
+    padding: 16px 20px;
+  }
+
+  .faq-question h3 {
+    font-size: 1rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.95rem;
+  }
+}

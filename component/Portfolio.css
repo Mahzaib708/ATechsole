@@ -1,0 +1,192 @@
+.portfolio-container {
+  min-height: 100vh;
+  margin-bottom: 100px;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.portfolio-intro {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  margin-bottom: 60px;
+  background-color: #0F5C3A;
+  color: white;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.portfolio-intro h1 {
+  font-size: 3rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.15s;
+}
+
+.portfolio-header h1 {
+  font-size: 2.5rem;
+  color: #0F5C3A;
+  margin-bottom: 10px;
+}
+
+.portfolio-header p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.portfolio-card-wrapper {
+  position: relative;
+  width: 350px;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.portfolio-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+}
+
+.portfolio-card-top {
+  height: 50%;
+  width: 100%;
+  position: relative;
+  background-color: #eee;
+}
+
+.portfolio-card-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .portfolio-intro h1 {
+    font-size: 2rem;
+  }
+
+  .portfolio-intro {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .portfolio-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .portfolio-card-wrapper {
+    width: 90%;
+    /* Responsive width */
+    max-width: 350px;
+  }
+
+  .portfolio-grid {
+    gap: 30px;
+  }
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.view-btn {
+  background-color: white;
+  color: #333;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .view-btn {
+  transform: translateY(0);
+}
+
+.portfolio-card-bottom {
+  height: 50%;
+  background-color: #0F5C3A;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-card-bottom h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cyan-text {
+  color: #D7262D;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.portfolio-card-bottom p {
+  color: #b2bec3;
+  /* Light grey text */
+  font-size: 0.9rem;
+  line-height: 1.6;
+}

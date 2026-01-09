@@ -1,0 +1,89 @@
+
+.events-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(28, 29, 28);
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.bg-image.visible {
+  opacity: 1;
+}
+
+.events-list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 70%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  overflow-y: auto;
+  scrollbar-width: none; 
+}
+
+.events-list::-webkit-scrollbar {
+  display: none; 
+}
+
+.event-item {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.event-item h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+  color: transparent;
+  transition: all 0.3s ease;
+}
+
+.event-item:hover h2,
+.event-item.active h2 {
+  color: #fff;
+  -webkit-text-stroke: 0px transparent;
+}
+
+.event-item:hover {
+  transform: scale(1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .event-item h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-item h2 {
+    font-size: 2rem;
+  }
+}
